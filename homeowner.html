@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HorryPros | Homeowner Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>HorryPros</h1>
+    <p class="slogan">Find trusted contractors in Horry County!</p>
+    <div class="lang-toggle">
+      <button onclick="changeLang('en')">English</button>
+      <button onclick="changeLang('es')">Español</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="homeowner-form">
+      <div class="form-container">
+        <h2 data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">Tell us about your project</h2>
+        
+        <form id="project-form">
+          <div class="form-group">
+            <label data-en="Project Type:" data-es="Tipo de Proyecto:">Project Type:</label>
+            <select id="project-type" required>
+              <option value="" data-en="Select a service..." data-es="Selecciona un servicio...">Select a service...</option>
+              <option value="plumbing" data-en="Plumbing" data-es="Plomería">Plumbing</option>
+              <option value="electrical" data-en="Electrical" data-es="Eléctrico">Electrical</option>
+              <option value="roofing" data-en="Roofing" data-es="Techado">Roofing</option>
+              <option value="hvac" data-en="HVAC" data-es="Aire Acondicionado">HVAC</option>
+              <option value="flooring" data-en="Flooring" data-es="Pisos">Flooring</option>
+              <option value="painting" data-en="Painting" data-es="Pintura">Painting</option>
+              <option value="landscaping" data-en="Landscaping" data-es="Jardinería">Landscaping</option>
+              <option value="other" data-en="Other" data-es="Otro">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Project Description:" data-es="Descripción del Proyecto:">Project Description:</label>
+            <textarea id="description" placeholder="Describe your project..." data-en="Describe your project..." data-es="Describe tu proyecto..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Budget Range:" data-es="Rango de Presupuesto:">Budget Range:</label>
+            <select id="budget" required>
+              <option value="" data-en="Select budget range..." data-es="Selecciona rango de presupuesto...">Select budget range...</option>
+              <option value="under-500" data-en="Under $500" data-es="Menos de $500">Under $500</option>
+              <option value="500-1500" data-en="$500 - $1,500" data-es="$500 - $1,500">$500 - $1,500</option>
+              <option value="1500-5000" data-en="$1,500 - $5,000" data-es="$1,500 - $5,000">$1,500 - $5,000</option>
+              <option value="5000-15000" data-en="$5,000 - $15,000" data-es="$5,000 - $15,000">$5,000 - $15,000</option>
+              <option value="over-15000" data-en="Over $15,000" data-es="Más de $15,000">Over $15,000</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Your Name:" data-es="Tu Nombre:">Your Name:</label>
+            <input type="text" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Phone Number:" data-es="Número de Teléfono:">Phone Number:</label>
+            <input type="tel" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Email:" data-es="Correo Electrónico:">Email:</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Location in Horry County:" data-es="Ubicación en el Condado de Horry:">Location in Horry County:</label>
+            <input type="text" id="location" placeholder="City or area" data-en="City or area" data-es="Ciudad o área" required>
+          </div>
+
+          <button type="submit" data-en="Find Contractors" data-es="Encontrar Contratistas">Find Contractors</button>
+        </form>
+
+        <div class="back-link">
+          <a href="index.html" data-en="← Back to Home" data-es="← Volver al Inicio">← Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HorryPros. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

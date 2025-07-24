@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HorryPros | Find Contractors in Horry County</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>HorryPros</h1>
+    <p class="slogan">Connecting homeowners with trusted local pros!</p>
+    <div class="lang-toggle">
+      <button onclick="changeLang('en')">English</button>
+      <button onclick="changeLang('es')">Español</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="options">
+      <div class="card" onclick="selectOption('homeowner')">
+        <h2 data-en="I'm a Homeowner" data-es="Soy Propietario">I'm a Homeowner</h2>
+        <p data-en="I need a contractor" data-es="Necesito un contratista">I need a contractor</p>
+      </div>
+      <div class="card" onclick="selectOption('contractor')">
+        <h2 data-en="I'm a Contractor" data-es="Soy Contratista">I'm a Contractor</h2>
+        <p data-en="I want to offer my services" data-es="Quiero ofrecer mis servicios">I want to offer my services</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HorryPros. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

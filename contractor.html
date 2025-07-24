@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HorryPros | Contractor Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>HorryPros</h1>
+    <p class="slogan">Join our network of trusted professionals!</p>
+    <div class="lang-toggle">
+      <button onclick="changeLang('en')">English</button>
+      <button onclick="changeLang('es')">Español</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="contractor-form">
+      <div class="form-container">
+        <h2 data-en="Register as a Contractor" data-es="Regístrate como Contratista">Register as a Contractor</h2>
+        
+        <form id="contractor-form">
+          <div class="form-group">
+            <label data-en="Business Name:" data-es="Nombre del Negocio:">Business Name:</label>
+            <input type="text" id="business-name" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Your Name:" data-es="Tu Nombre:">Your Name:</label>
+            <input type="text" id="owner-name" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Services Offered:" data-es="Servicios Ofrecidos:">Services Offered:</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="plumbing"> <span data-en="Plumbing" data-es="Plomería">Plumbing</span></label>
+              <label><input type="checkbox" value="electrical"> <span data-en="Electrical" data-es="Eléctrico">Electrical</span></label>
+              <label><input type="checkbox" value="roofing"> <span data-en="Roofing" data-es="Techado">Roofing</span></label>
+              <label><input type="checkbox" value="hvac"> <span data-en="HVAC" data-es="Aire Acondicionado">HVAC</span></label>
+              <label><input type="checkbox" value="flooring"> <span data-en="Flooring" data-es="Pisos">Flooring</span></label>
+              <label><input type="checkbox" value="painting"> <span data-en="Painting" data-es="Pintura">Painting</span></label>
+              <label><input type="checkbox" value="landscaping"> <span data-en="Landscaping" data-es="Jardinería">Landscaping</span></label>
+              <label><input type="checkbox" value="general"> <span data-en="General Contracting" data-es="Contratista General">General Contracting</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Years of Experience:" data-es="Años de Experiencia:">Years of Experience:</label>
+            <select id="experience" required>
+              <option value="" data-en="Select experience..." data-es="Selecciona experiencia...">Select experience...</option>
+              <option value="1-2" data-en="1-2 years" data-es="1-2 años">1-2 years</option>
+              <option value="3-5" data-en="3-5 years" data-es="3-5 años">3-5 years</option>
+              <option value="6-10" data-en="6-10 years" data-es="6-10 años">6-10 years</option>
+              <option value="10+" data-en="10+ years" data-es="10+ años">10+ years</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label data-en="License Number (if applicable):" data-es="Número de Licencia (si aplica):">License Number (if applicable):</label>
+            <input type="text" id="license">
+          </div>
+
+          <div class="form-group">
+            <label data-en="Insurance:" data-es="Seguro:">Insurance:</label>
+            <select id="insurance" required>
+              <option value="" data-en="Select insurance status..." data-es="Selecciona estado del seguro...">Select insurance status...</option>
+              <option value="full" data-en="Fully Insured (Liability & Workers Comp)" data-es="Completamente Asegurado">Fully Insured (Liability & Workers Comp)</option>
+              <option value="liability" data-en="Liability Insurance Only" data-es="Solo Seguro de Responsabilidad">Liability Insurance Only</option>
+              <option value="none" data-en="Not Insured" data-es="Sin Seguro">Not Insured</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Phone Number:" data-es="Número de Teléfono:">Phone Number:</label>
+            <input type="tel" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Email:" data-es="Correo Electrónico:">Email:</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Service Areas in Horry County:" data-es="Áreas de Servicio en el Condado de Horry:">Service Areas in Horry County:</label>
+            <textarea id="service-areas" placeholder="List cities/areas you serve..." data-en="List cities/areas you serve..." data-es="Lista ciudades/áreas donde das servicio..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label data-en="Business Description:" data-es="Descripción del Negocio:">Business Description:</label>
+            <textarea id="description" placeholder="Tell us about your business..." data-en="Tell us about your business..." data-es="Cuéntanos sobre tu negocio..." required></textarea>
+          </div>
+
+          <button type="submit" data-en="Register My Business" data-es="Registrar Mi Negocio">Register My Business</button>
+        </form>
+
+        <div class="back-link">
+          <a href="index.html" data-en="← Back to Home" data-es="← Volver al Inicio">← Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HorryPros. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
