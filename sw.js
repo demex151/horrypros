@@ -1,4 +1,4 @@
-const CACHE_NAME = 'accountingpro-v1';
+const CACHE_NAME = 'accountingpro-v2';
 const CORE_ASSETS = [
   '/',
   '/index.html',
