@@ -1177,7 +1177,7 @@ canvas {
 
   .sidebar {
     width: 100%;
-    height: 60px;
+    height: 65px;
     position: fixed;
     bottom: 0;
     top: auto;
@@ -1209,22 +1209,24 @@ canvas {
   .nav-btn {
     flex: 0 0 auto;
     margin: 0;
-    padding: 8px 12px;
+    padding: 12px 16px;
     border-radius: 0;
-    font-size: 0.7em;
+    font-size: 0.75em;
     flex-direction: column;
     gap: 4px;
-    min-width: 70px;
+    min-width: 80px;
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(79, 70, 229, 0.2);
   }
 
   .nav-btn .icon {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 
   .nav-btn .icon svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 
   .nav-btn:hover {
