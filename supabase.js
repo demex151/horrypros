@@ -1,6 +1,6 @@
 // ==================== SUPABASE CONFIG ====================
-const supabaseUrl = "https://mrizwvsvkgislsejajji.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yaXp3dnN2a2dpc2xzZWphamppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5Njg3MDcsImV4cCI6MjA4NTU0NDcwN30.K6-WvJetOQp6ypjTS9IwA2AHO2PbrI0dkUGOhLIFtZc";
+const supabaseUrl = "https://tmnpgbezdvghvvpqnpln.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRtbnBnYmV6ZHZnaHZ2cHFucGxuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NzAwNTcsImV4cCI6MjA4NTU0NjA1N30.h4mWNOiRleiA0y1KTn6cwU-IO0D-NGfEYO2iswF-gDs";
 
 const supabaseEnabled =
   typeof supabaseUrl !== 'undefined' &&
