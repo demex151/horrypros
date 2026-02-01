@@ -1,38 +1,623 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HorryPros | Find Contractors in Horry County</title>
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.svg" />
+  <title>Gevers Painting Account - Business Accounting System</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>HorryPros</h1>
-    <p class="slogan">Connecting homeowners with trusted local pros!</p>
-    <div class="lang-toggle">
-      <button onclick="changeLang('en')">English</button>
-      <button onclick="changeLang('es')">Español</button>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>
+          <span class="app-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="M7 15l3-3 4 4 6-6" />
+            </svg>
+          </span>
+          Gevers Painting Account
+        </h1>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-page="dashboard">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="M7 15l3-3 4 4 6-6" />
+            </svg>
+          </span>
+          Dashboard
+        </button>
+        <button class="nav-btn" data-page="clients">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </span>
+          Clients
+        </button>
+        <button class="nav-btn" data-page="employees">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a4 4 0 0 0-8 0v2" />
+              <path d="M2 13h20" />
+            </svg>
+          </span>
+          Employees
+        </button>
+        <button class="nav-btn" data-page="transactions">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <path d="M2 10h20" />
+              <path d="M6 15h4" />
+            </svg>
+          </span>
+          Transactions
+        </button>
+        <button class="nav-btn" data-page="quotes">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8" />
+              <path d="M8 17h5" />
+            </svg>
+          </span>
+          Quotes
+        </button>
+        <button class="nav-btn" data-page="categories">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41 11 3H4a2 2 0 0 0-2 2v7l9.59 9.59a2 2 0 0 0 2.82 0l6.18-6.18a2 2 0 0 0 0-2.82Z" />
+              <circle cx="7.5" cy="7.5" r="1.5" />
+            </svg>
+          </span>
+          Categories
+        </button>
+        <button class="nav-btn" data-page="reports">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="M7 17V9" />
+              <path d="M12 17V5" />
+              <path d="M17 17v-7" />
+            </svg>
+          </span>
+          Reports
+        </button>
+        <button class="nav-btn" data-page="settings">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06A2 2 0 1 1 3.4 17l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H2a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82L3.21 7.2A2 2 0 1 1 6.04 4.37l.06.06a1.65 1.65 0 0 0 1.82.33H8a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06A2 2 0 1 1 20.6 7.2l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .65.38 1.24.97 1.51.17.08.35.13.54.15H22a2 2 0 1 1 0 4h-.09c-.19.02-.37.07-.54.15-.59.27-.97.86-.97 1.51Z" />
+            </svg>
+          </span>
+          Settings
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="export-btn" class="export-btn">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <path d="M7 10l5 5 5-5" />
+              <path d="M12 15V3" />
+            </svg>
+          </span>
+          Export Data
+        </button>
+        <button id="clear-btn" class="clear-btn">
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18" />
+              <path d="M8 6V4h8v2" />
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+              <path d="M10 11v6" />
+              <path d="M14 11v6" />
+            </svg>
+          </span>
+          Clear All
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Dashboard Page -->
+      <section id="dashboard" class="page active">
+        <h2>Dashboard</h2>
+        <div class="stats-container">
+          <div class="stat-card income">
+            <h3>Income</h3>
+            <p class="stat-value" id="total-income">$0.00</p>
+            <p class="stat-label">Total accumulated</p>
+          </div>
+          <div class="stat-card expense">
+            <h3>Expenses</h3>
+            <p class="stat-value" id="total-expense">$0.00</p>
+            <p class="stat-label">Total accumulated</p>
+          </div>
+          <div class="stat-card balance">
+            <h3>Net Balance</h3>
+            <p class="stat-value" id="net-balance">$0.00</p>
+            <p class="stat-label">Income - Expenses</p>
+          </div>
+        </div>
+
+        <div class="charts-container">
+          <div class="chart-card">
+            <h3>Recent Transactions</h3>
+            <div id="recent-transactions" class="transactions-list">
+              <p class="empty-state">No transactions recorded</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Employees Page -->
+      <section id="employees" class="page">
+        <h2>Manage Employees</h2>
+        
+        <div class="form-card">
+          <h3>Add New Employee</h3>
+          <form id="employee-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="employee-name" placeholder="Employee name" required>
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="employee-phone" placeholder="+1 (123) 456-7890">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="employee-email" placeholder="employee@example.com">
+              </div>
+              <div class="form-group">
+                <label>Hourly Rate ($)</label>
+                <input type="number" id="employee-rate" placeholder="15.00" step="0.01" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Position</label>
+                <input type="text" id="employee-position" placeholder="Job position">
+              </div>
+              <div class="form-group">
+                <label>Start Date</label>
+                <input type="date" id="employee-start-date" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Status</label>
+                <select id="employee-status">
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <input type="text" id="employee-notes" placeholder="Additional notes">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Add Employee</button>
+          </form>
+        </div>
+
+        <div class="list-card">
+          <h3>Employee List</h3>
+          <div class="filter-controls">
+            <input type="text" id="search-employee" placeholder="Search employee...">
+            <select id="filter-employee-status">
+              <option value="">All statuses</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <div id="employees-table" class="employees-table">
+            <p class="empty-state">No employees registered</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Record Hours Page -->
+      <section id="hours" class="page hidden">
+        <h2>Record Work Hours</h2>
+        <div id="employee-hours-form-container"></div>
+      </section>
+
+      <!-- Transactions Page -->
+      <section id="transactions" class="page">
+        <h2>Manage Transactions</h2>
+        
+        <div class="form-card">
+          <h3>New Transaction</h3>
+          <form id="transaction-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" id="description" placeholder="E.g: Product sale" required>
+              </div>
+              <div class="form-group">
+                <label>Amount ($)</label>
+                <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Type</label>
+                <select id="type" required>
+                  <option value="">Select type</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expense</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select id="category" required>
+                  <option value="">Select category</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Client (Optional)</label>
+                <select id="transaction-client">
+                  <option value="">No client</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" id="date" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Note (optional)</label>
+                <input type="text" id="note" placeholder="Additional details">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Register Transaction</button>
+          </form>
+        </div>
+
+        <div class="list-card">
+          <h3>Transaction History</h3>
+          <div class="filter-controls">
+            <select id="filter-type">
+              <option value="">All types</option>
+              <option value="income">Income</option>
+              <option value="expense">Expenses</option>
+            </select>
+            <select id="filter-category">
+              <option value="">All categories</option>
+            </select>
+            <input type="text" id="search-transaction" placeholder="Search transaction...">
+          </div>
+          <div id="transactions-table" class="transactions-table">
+            <p class="empty-state">No transactions recorded</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients Page -->
+      <section id="clients" class="page">
+        <h2>Manage Clients</h2>
+        
+        <div class="form-card">
+          <h3>New Client</h3>
+          <form id="client-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="client-name" placeholder="Client name" required>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="client-email" placeholder="client@example.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="client-phone" placeholder="+1 (123) 456-7890">
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" id="client-company" placeholder="Company name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Address</label>
+                <input type="text" id="client-address" placeholder="Street, number, city">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" id="client-city" placeholder="City">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Zip Code</label>
+                <input type="text" id="client-zip" placeholder="ZIP">
+              </div>
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" id="client-country" placeholder="Country">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Client Type</label>
+                <select id="client-type">
+                  <option value="personal">Personal</option>
+                  <option value="business">Business</option>
+                  <option value="wholesale">Wholesale</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Note</label>
+                <input type="text" id="client-note" placeholder="Additional notes">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Add Client</button>
+          </form>
+        </div>
+
+        <div class="list-card">
+          <h3>Client List</h3>
+          <div class="filter-controls">
+            <input type="text" id="search-client" placeholder="Search client...">
+            <select id="filter-client-type">
+              <option value="">All types</option>
+              <option value="personal">Personal</option>
+              <option value="business">Business</option>
+              <option value="wholesale">Wholesale</option>
+            </select>
+          </div>
+          <div id="clients-table" class="clients-table">
+            <p class="empty-state">No clients registered</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quotes Page -->
+      <section id="quotes" class="page">
+        <h2>Manage Quotes</h2>
+        
+        <div class="form-card">
+          <h3>New Quote</h3>
+          <form id="quote-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Client</label>
+                <select id="quote-client" required>
+                  <option value="">Select client</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Quote Number</label>
+                <input type="text" id="quote-number" placeholder="QUO-001" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Project Description</label>
+                <textarea id="quote-description" placeholder="Detailed description of work or product" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Amount ($)</label>
+                <input type="number" id="quote-amount" placeholder="0.00" step="0.01" required>
+              </div>
+              <div class="form-group">
+                <label>Quote Date</label>
+                <input type="date" id="quote-date" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry Date</label>
+                <input type="date" id="quote-expiry" required>
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select id="quote-status">
+                  <option value="pending">Pending</option>
+                  <option value="accepted">Accepted</option>
+                  <option value="rejected">Rejected</option>
+                  <option value="expired">Expired</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Note</label>
+                <input type="text" id="quote-note" placeholder="Additional notes">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Create Quote</button>
+          </form>
+        </div>
+
+        <div class="list-card">
+          <h3>Quote History</h3>
+          <div class="filter-controls">
+            <select id="filter-quote-status">
+              <option value="">All statuses</option>
+              <option value="pending">Pending</option>
+              <option value="accepted">Accepted</option>
+              <option value="rejected">Rejected</option>
+              <option value="expired">Expired</option>
+            </select>
+            <select id="filter-quote-client">
+              <option value="">All clients</option>
+            </select>
+            <input type="text" id="search-quote" placeholder="Search quote...">
+          </div>
+          <div id="quotes-table" class="quotes-table">
+            <p class="empty-state">No quotes registered</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Page -->
+      <section id="categories" class="page">
+        <h2>Manage Categories</h2>
+        
+        <div class="form-card">
+          <h3>New Category</h3>
+          <form id="category-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Category Name</label>
+                <input type="text" id="category-name" placeholder="E.g: Salaries" required>
+              </div>
+              <div class="form-group">
+                <label>Type</label>
+                <select id="category-type" required>
+                  <option value="">Select type</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expense</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">Add Category</button>
+          </form>
+        </div>
+
+        <div class="list-card">
+          <h3>Registered Categories</h3>
+          <div id="categories-list" class="categories-list">
+            <p class="empty-state">No categories registered</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reports Page -->
+      <section id="reports" class="page">
+        <h2>Reports and Analytics</h2>
+        
+        <div class="reports-container">
+          <div class="report-card">
+            <h3>Summary by Category</h3>
+            <div id="category-summary" class="summary-list">
+              <p class="empty-state">No data</p>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <h3>Monthly Summary</h3>
+            <div class="filter-controls">
+              <input type="month" id="report-month">
+            </div>
+            <div id="monthly-summary" class="summary-list">
+              <p class="empty-state">Select a month</p>
+            </div>
+          </div>
+
+          <div class="report-card full-width">
+            <h3>Expense Distribution</h3>
+            <canvas id="expense-chart"></canvas>
+          </div>
+
+          <div class="report-card full-width">
+            <h3>Income vs Expenses Trend</h3>
+            <canvas id="trend-chart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings Page -->
+      <section id="settings" class="page">
+        <h2>Settings</h2>
+        
+        <div class="form-card">
+          <h3>Business Information</h3>
+          <form id="settings-form">
+            <div class="form-group">
+              <label>Business Name</label>
+              <input type="text" id="business-name" placeholder="My Business">
+            </div>
+            <div class="form-group">
+              <label>Currency</label>
+              <select id="currency">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="MXN">MXN ($)</option>
+                <option value="ARS">ARS ($)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Fiscal Year</label>
+              <input type="number" id="fiscal-year" min="2000" max="2100">
+            </div>
+            <button type="submit" class="btn-primary">Save Settings</button>
+          </form>
+        </div>
+
+        <div class="info-card">
+          <h3>About AccountingPRO</h3>
+          <p>A simple yet powerful tool to manage your business accounting.</p>
+          <p><strong>Version:</strong> 1.0.0</p>
+          <p><strong>Storage:</strong> Data is saved locally in your browser</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal para eliminar transacción -->
+  <div id="delete-modal" class="modal">
+    <div class="modal-content">
+      <h3>Confirm deletion</h3>
+      <p>Are you sure you want to delete this transaction?</p>
+      <div class="modal-buttons">
+        <button id="confirm-delete" class="btn-danger">Delete</button>
+        <button id="cancel-delete" class="btn-secondary">Cancel</button>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="options">
-      <div class="card" onclick="selectOption('homeowner')">
-        <h2 data-en="I'm a Homeowner" data-es="Soy Propietario">I'm a Homeowner</h2>
-        <p data-en="I need a contractor" data-es="Necesito un contratista">I need a contractor</p>
-      </div>
-      <div class="card" onclick="selectOption('contractor')">
-        <h2 data-en="I'm a Contractor" data-es="Soy Contratista">I'm a Contractor</h2>
-        <p data-en="I want to offer my services" data-es="Quiero ofrecer mis servicios">I want to offer my services</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 HorryPros. All rights reserved.</p>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
